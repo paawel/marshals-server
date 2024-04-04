@@ -1,13 +1,13 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity()
-export class Napoleonic_Battles {
-    @PrimaryGeneratedColumn()
-    id: string;
+export class NapoleonicBattles {
+  @PrimaryGeneratedColumn()
+  id: string;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @Column()
-    date: Date;
+  @Column()
+  date: Date;
 }

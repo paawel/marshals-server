@@ -1,23 +1,30 @@
-import {IsNotEmpty, IsString} from "class-validator";
+import { IsNotEmpty, IsOptional, IsString } from "class-validator";
+import { Type } from "class-transformer";
 
 export class AddMarshalDto {
-    @IsNotEmpty({message: 'Field name cannot be empty.'})
-    id: string;
+  @IsNotEmpty({ message: "ID is Required." })
+  @Type(() => String)
+  id: string;
 
-    @IsNotEmpty({message: 'Field name cannot be empty.'})
-    name: string;
+  @IsNotEmpty({ message: "Name is Required." })
+  @Type(() => String)
+  @Type(() => String)
+  name: string;
 
-    @IsNotEmpty({message: 'Field surname cannot be empty.'})
-    surname: string;
+  @IsNotEmpty({ message: "Surname is Required." })
+  @Type(() => String)
+  surname: string;
 
-    shortName: string;
+  @IsOptional()
+  @Type(() => String)
+  shortName: string;
 
-    @IsNotEmpty({message: 'Place of birth field cannot be empty.'})
-    placeOfBirth: string;
+  @IsNotEmpty({ message: "Place of birth is Required." })
+  placeOfBirth: string;
 
-    @IsNotEmpty({message: 'Date of birth field cannot be empty.'})
-    dateOfBirth: Date
+  @IsNotEmpty({ message: "Date of birth is Required." })
+  dateOfBirth: Date;
 
-    @IsString({each: true})
-    battles: Array<string>;
+  @IsString({ each: true })
+  battles: Array<string>;
 }

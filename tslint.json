@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "no-any": true,
+    "no-debugger": true,
+    "no-var-keyword": true,
+    "no-return-await": true,
+    "no-unused-variable": true,
+    "no-trailing-whitespace": true,
+    "no-console": [true, "log", "error"],
+    "semicolon": [true, "always"],
+    "class-name": true,
+    "import-spacing": true,
+    "await-promise": true,
+    "switch-default": true,
+    "curly": true
+  }
+}

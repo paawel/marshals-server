@@ -1,17 +1,14 @@
-import {Column, Entity, ManyToMany, PrimaryGeneratedColumn} from "typeorm";
-import {Marshal} from "./marshal.entity";
+import { Column, Entity, ManyToMany, PrimaryGeneratedColumn } from "typeorm";
+import { Marshal } from "./marshal.entity";
 
 @Entity()
 export class Battle {
-    @PrimaryGeneratedColumn()
-    id: string;
+  @PrimaryGeneratedColumn()
+  id: string;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @ManyToMany(
-        type => Marshal,
-        (marshal: Marshal) => marshal.battles
-    )
-    battlefields: Marshal[];
+  @ManyToMany(type => Marshal, (marshal: Marshal) => marshal.battles)
+  battlefields: Marshal[];
 }
