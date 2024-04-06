@@ -1,10 +1,11 @@
 import { Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { Marshal } from "../entities/marshal.entity";
 import { Repository } from "typeorm";
 import { AddMarshalDto } from "./dto/add-marshal.dto";
 import { UpdateMarshalDto } from "./dto/update-marshal.dto";
-import { Battle } from "../entities/battles.entity";
+import { Marshal } from "./entities/marshal.entity";
+import { Battle } from "./entities/battles.entity";
+
 
 @Injectable()
 export class MarshalsService {
@@ -13,7 +14,8 @@ export class MarshalsService {
     private readonly marshalRep: Repository<Marshal>,
     @InjectRepository(Battle)
     private readonly battleRep: Repository<Battle>,
-  ) {}
+  ) {
+  }
 
   findAll(): Promise<Array<Marshal>> {
     return this.marshalRep.find({
@@ -24,7 +26,7 @@ export class MarshalsService {
   async findOne(id: string): Promise<Marshal> {
     // @ts-ignore
     return await this.marshalRep.findBy(
-      { id }
+      { id },
     );
   }
 

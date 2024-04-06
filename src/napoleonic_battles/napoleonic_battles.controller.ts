@@ -1,7 +1,7 @@
 import { Body, Controller, Get, HttpCode, HttpStatus, Post } from "@nestjs/common";
 import { NapoleonicBattlesService } from "./napoleonic_battles.service";
-import { NapoleonicBattles } from "../entities/napoleonic_battles.entity";
 import { AddBattleDto } from "./dto/add-battle.dto";
+import { NapoleonicBattles } from "./entities/napoleonic_battles.entity";
 
 @Controller("battles")
 export class NapoleonicBattlesController {

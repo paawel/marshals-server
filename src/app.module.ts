@@ -5,6 +5,8 @@ import { TypeOrmModule } from "@nestjs/typeorm";
 import { MarshalsModule } from "./marshals/marshals.module";
 import { NapoleonicBattlesModule } from "./napoleonic_battles/napoleonic_battles.module";
 import { ConfigModule } from "@nestjs/config";
+import { IamModule } from './iam/iam.module';
+import { UserModule } from './user/user.module';
 import * as process from "process";
 
 @Module({
@@ -23,6 +25,8 @@ import * as process from "process";
     }),
     MarshalsModule,
     NapoleonicBattlesModule,
+    IamModule,
+    UserModule,
   ],
   controllers: [AppController],
   providers: [AppService],

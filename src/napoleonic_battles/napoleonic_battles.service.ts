@@ -1,8 +1,8 @@
 import { Injectable } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
-import { NapoleonicBattles } from "../entities/napoleonic_battles.entity";
 import { Repository } from "typeorm";
 import { AddBattleDto } from "./dto/add-battle.dto";
+import { NapoleonicBattles } from "./entities/napoleonic_battles.entity";
 
 @Injectable()
 export class NapoleonicBattlesService {
